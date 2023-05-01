@@ -14,7 +14,7 @@
 
 **Software** @fady, @ahmed
 - [ ] System Design
-- [ ] Database Design
+- [x] Database Design
 - [ ] System Implementation
 - [ ] System Testing
 - [ ] System Deployment
