@@ -26,6 +26,6 @@
 - - [x] Train Autoencoder
 - - [ ] Build Classifier
 - [ ] Model Evaluation
-- - Optimize on inference time
+- - [ ] Optimize on inference time
 - [ ] Model Deployment
 
