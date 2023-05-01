@@ -3,7 +3,9 @@ import time
 import cv2
 import os
 from dotenv import load_dotenv
+
 load_dotenv("./.env")
+
 
 class DataBase:
     def __init__(self):
@@ -11,17 +13,23 @@ class DataBase:
         self.db = self.client[os.getenv("db_name")]
         self.collection = self.db[os.getenv("collection_name")]
 
+        self.db_count = self.get_len()
 
     def insert_image(self, time_stamp, img, label=""):
 
         is_success, im_buf_arr = cv2.imencode(".jpg", img)
         binary_data = im_buf_arr.tobytes()
 
-        self.collection.insert_one({"_id": self.get_len()+1,
-                                    "time": time_stamp,
-                                    "img": binary_data,
-                                    "label": label})
-        
+        self.collection.insert_one(
+            {
+                "_id": self.db_count + 1,
+                "time": time_stamp,
+                "img": binary_data,
+                "label": label,
+            }
+        )
+
+        self.db_count += 1
         return True
 
     def data_generator(self):
@@ -34,4 +42,3 @@ class DataBase:
     def remove_all(self):
         self.collection.delete_many({})
         return True
-
