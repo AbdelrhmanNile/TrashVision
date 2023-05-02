@@ -1,0 +1,56 @@
+TrashVision: {
+  arduino: {
+    shape: image
+    icon: https://icons.terrastruct.com/aws/_Group%20Icons/EC2-instance-container_light-bg.svg
+  }
+  camera
+  esp32
+
+  style.3d: true
+  style.shadow: true
+  style.multiple: true
+  style.double-border: true
+  width: 504
+  height: 372
+  top: 0
+  left: 189
+}
+
+Remote Server: {
+  ML Model: {style.3d: false}
+  style.3d: true
+  style.shadow: true
+  style.multiple: false
+  style.double-border: true
+}
+
+network connection
+
+TrashVision.camera -> TrashVision.esp32 -> network connection -> Remote Server: IMAGE {
+  style.font-color: "#000536"
+  style.font-size: 16
+}
+
+Remote Server -> network connection -> TrashVision.esp32 -> TrashVision.arduino: PREDECTION {
+  style.font-color: "#000536"
+  style.font-size: 16
+}
+
+DataBase: {
+  shape: cylinder
+  style.shadow: true
+  style.multiple: false
+}
+
+TrashVision.arduino -> servo1
+TrashVision.arduino -> servo2
+TrashVision.arduino -> servo3
+
+input -> TrashVision.camera: {
+  style.stroke-dash: 3
+  style.stroke: "#000536"
+}
+Remote Server -> DataBase
+Text: |md ### _LOGS_ |
+(network connection -> TrashVision.esp32)[0]: PREDICTION
+(Remote Server -> network connection)[0]: PREDICTION
