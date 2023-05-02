@@ -13,7 +13,7 @@
 - [ ] Deployment
 
 **Software** @fady, @ahmed
-- [ ] System Design
+- [x] System Design
 - [ ] Database
 - - [x] Design Database
 - - [ ] Implement data generator
