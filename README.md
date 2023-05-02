@@ -6,7 +6,7 @@
 - [x] Project Proposal
 
 **Hardware** @islam, @muhammad
-- [ ] Circuit Design
+- [x] Circuit Design
 - [ ] Simulation
 - [ ] Implementation
 - [ ] Testing
