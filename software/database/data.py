@@ -18,10 +18,16 @@ class DataBase:
         is_success, im_buf_arr = cv2.imencode(".jpg", img)
         binary_data = im_buf_arr.tobytes()
 
-        self.collection.insert_one({"_id": self.get_len()+1,
-                                    "time": time_stamp,
-                                    "img": binary_data,
-                                    "label": label})
+        self.collection.insert_one(
+            {
+                "_id": self.db_count + 1,
+                "time": time_stamp,
+                "img": binary_data,
+                "label": label,
+            }
+        )
+
+        self.db_count += 1
         return True
 
     #def data_generator(self):
@@ -33,6 +39,7 @@ class DataBase:
             image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
             label = document["label"]
             yield image, label
+
 
     def get_len(self):
         data = self.collection.find({})
