@@ -3,17 +3,16 @@ import time
 import cv2
 import os
 from dotenv import load_dotenv
-
 load_dotenv("./.env")
-
+import numpy as np
 
 class DataBase:
     def __init__(self):
         self.client = MongoClient(os.getenv("db_url"))
         self.db = self.client[os.getenv("db_name")]
         self.collection = self.db[os.getenv("collection_name")]
+        self.db_count = get_len()
 
-        self.db_count = self.get_len()
 
     def insert_image(self, time_stamp, img, label=""):
 
@@ -32,8 +31,16 @@ class DataBase:
         self.db_count += 1
         return True
 
+    #def data_generator(self):
     def data_generator(self):
-        raise NotImplementedError("This function is not implemented yet")
+        cursor = self.collection.find()
+        for document in cursor:
+            image_bytes = document["img"]
+            image_array = np.frombuffer(image_bytes, dtype=np.uint8)
+            image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
+            label = document["label"]
+            yield image, label
+
 
     def get_len(self):
         data = self.collection.find({})
@@ -42,3 +49,4 @@ class DataBase:
     def remove_all(self):
         self.collection.delete_many({})
         return True
+
