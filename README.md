@@ -14,7 +14,7 @@
 
 **Software** @fady, @ahmed
 - [x] System Design
-- [ ] Database
+- [x] Database
 - - [x] Design Database
 - - [x] Implement data generator
 - [ ] System Implementation
