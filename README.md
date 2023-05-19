@@ -16,7 +16,7 @@
 - [x] System Design
 - [ ] Database
 - - [x] Design Database
-- - [ ] Implement data generator
+- - [x] Implement data generator
 - [ ] System Implementation
 - [ ] System Testing
 - [ ] System Deployment
