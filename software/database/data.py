@@ -11,6 +11,7 @@ class DataBase:
         self.client = MongoClient(os.getenv("db_url"))
         self.db = self.client[os.getenv("db_name")]
         self.collection = self.db[os.getenv("collection_name")]
+        self.db_count = get_len()
 
 
     def insert_image(self, time_stamp, img, label=""):
