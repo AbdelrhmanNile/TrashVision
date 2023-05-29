@@ -7,10 +7,10 @@
 
 **Hardware** @islam, @muhammad
 - [x] Circuit Design
-- [ ] Simulation
-- [ ] Implementation
-- [ ] Testing
-- [ ] Deployment
+- [x] Simulation
+- [x] Implementation
+- [x] Testing
+- [x] Deployment
 
 **Software** @fady, @ahmed
 - [x] System Design
