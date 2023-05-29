@@ -17,17 +17,17 @@
 - [x] Database
 - - [x] Design Database
 - - [x] Implement data generator
-- [ ] System Implementation
-- [ ] System Testing
-- [ ] System Deployment
+- [x] System Implementation
+- [x] System Testing
+- [x] System Deployment
 
 **Machine Learning** @abdelrhman
 - [x] Find [Dataset](https://www.kaggle.com/datasets/mostafaabla/garbage-classification)
 - [x] Data Preprocessing
-- [ ] Model Training
+- [x] Model Training
 - - [x] Train Autoencoder
-- - [ ] Build Classifier
-- [ ] Model Evaluation
-- - [ ] Optimize on inference time
-- [ ] Model Deployment
+- - [x] Build Classifier
+- [x] Model Evaluation
+- - [x] Optimize on inference time
+- [x] Model Deployment
 
