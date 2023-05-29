@@ -39,7 +39,7 @@ class DataBase:
             image_array = np.frombuffer(image_bytes, dtype=np.uint8)
             image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
             label = document["label"]
-            yield image, label
+            yield [image, image], label
 
 
     def get_len(self):
